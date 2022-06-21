@@ -6,15 +6,5 @@
     },
     "args": [
         "${file}"
-    ],
-    "tasks": [
-        {
-            "label": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-            "args": [
-                "${file}"
-            ],
-            "problemMatcher": [],
-            "group": "build"
-        }
     ]
 }
