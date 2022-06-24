@@ -1,12 +1,23 @@
-li{
-    font-size: 20px;
-    color: aqua;
+pre{
+    font-size: 30px;
+    color: hsl(187, 4%, 62%);
+    word-spacing: 6px;
+    letter-spacing: 4px;
+    line-height: 60px;
 }
 
-.cl-red{
-    color: red;
+ins + span{
+   text-decoration: overline; 
 }
-
-.text{
+.prime{
     font-weight: 900;
+}
+ins del{
+    text-shadow: 2px 2px 4px orange;
+}
+ins .prime del{
+    font-size: 35px;
+}
+.power{
+    color: rgba(171, 27, 111, 0.3);
 }
