@@ -1,0 +1,26 @@
+img{
+    width: 100%;
+    border: 5px solid rgb(222, 50, 12);
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 5px solid rgb(255, 102, 0);
+}
+td{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    border: 1px solid #000;
+}
+tr:nth-child(2n+1) td:nth-child(2n){
+    background: #000;
+}
+tr:nth-child(2n) td:nth-child(2n+1){
+    background: #000;
+}
