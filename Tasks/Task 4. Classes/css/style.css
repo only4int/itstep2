@@ -21,3 +21,9 @@ ins .prime del{
 .power{
     color: rgba(171, 27, 111, 0.3);
 }
+.sqr{
+    opacity: 0;
+}
+.sqr:hover{
+    opacity: 1;
+}
