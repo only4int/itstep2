@@ -1,0 +1,39 @@
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th{
+    color: #fff;
+    background: #1a39a1;
+    height: 50px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    border-bottom-width: 6px;
+}
+td{
+    color: #000;
+    height: 50px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+}
+
+tr:nth-child(2n+2) td{
+    background: #939fc7;
+}
+tr:nth-child(2n+3) td{
+    background: #cbd5f5;
+}
+
+tr td:nth-child(1){
+    width: 80px;
+    text-align: center;
+}
+tr td:nth-child(2){
+    width: 300px;
+    text-align: left;
+}
+tr td:nth-child(n+3){
+    width: 150px;
+    text-align: center;
+}
