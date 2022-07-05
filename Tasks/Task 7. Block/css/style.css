@@ -19,14 +19,18 @@
     position: absolute;
 }
 .inner1{
-
+    top: -100px;
+    left: -100px;
 }
 .inner2{
-    
+    top: -100px;
+    left: 400px;    
 }
 .inner3{
-    
+    top: 400px;
+    left: -100px;
 }
 .inner4{
-    
+    top: 400px;
+    left: 400px;
 }
