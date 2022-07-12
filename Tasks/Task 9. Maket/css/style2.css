@@ -1,0 +1,65 @@
+div{
+    position: relative;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    font-size: 30px;
+}
+.main{
+    width: 800px;
+    height: 1200px;
+    position: absolute;
+    /*left: 50%;
+    margin-left: -400px;*/
+    left: calc(50% - 400px);
+}
+.logo{
+    width: 200px;
+    height: 200px;
+    background: #000;
+}
+.info{
+    width: 600px;
+    height: 200px;
+    background: rgb(186, 173, 173);
+}
+.menu{
+    width: 200px;
+}
+.products{
+    width: 600px;
+}
+.nav{
+    width: 200px;
+    height: 600px;
+    background: rgb(205, 20, 20);
+}
+.stock{
+    width: 200px;
+    height: 200px;
+    background: #000;   
+}
+.product{
+    width: 200px;
+    height: 200px;
+    background: rgb(28, 11, 122); 
+}
+.footer-logo{
+    width: 200px;
+    height: 200px;
+    background: rgb(109, 91, 212); 
+}
+.social{
+    width: 600px;
+}
+.reviews{
+    height: 100px;
+    background: yellowgreen;
+    width: 600px;
+}
+.social-icons{
+    height: 100px;
+    background: violet;
+    width: 600px;
+}
