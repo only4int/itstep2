@@ -1,0 +1,41 @@
+.container{
+    width: 320px;
+    height: 500px;
+    background: #f0f;
+    font-size: 14px;
+    
+}
+.box{
+    width: calc(50% - 10px);
+    height: 150px;
+    margin: 5px;
+    background: #fff;
+    position: relative;
+    float: left;
+}
+@media (min-width: 768px){
+    .container{
+        background: palevioletred;
+        width: 768px;
+        height: 600px;
+    }
+    .box{
+        width: calc(33.33333333% - 10px);
+    }
+}
+@media (min-width: 900px){
+    .container{
+        background: #000;
+        width: 900px;
+        height: 500px;
+    }
+}
+@media (min-width: 1280px){
+    .container{
+        width: 1200px;
+        font-size: 24px;
+    }
+    .box{
+        width: calc(25% - 10px);
+    }
+}
