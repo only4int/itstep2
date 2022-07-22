@@ -1,0 +1,41 @@
+.container{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+.box{
+    height: 100px;
+    color: #fff;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    float: left;
+    background: #000;
+    width: calc(100% - 20px);
+}
+@media (min-width: 768px){
+    .container{
+        width: 768px;
+    }
+    .box{
+        width: calc(33.33333333% - 20px);
+    }    
+}
+@media (min-width: 1024px){
+    .container{
+        width: 992px;
+    }
+    .box{
+        width: calc(25% - 20px);
+    }    
+}
+@media (min-width: 1280px){
+    .container{
+        width: 1200px;
+    }
+    .box{
+        width: calc(16.6666666% - 20px);
+    }    
+}
