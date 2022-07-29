@@ -1,5 +1,8 @@
 body {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper {
   display: flex;
@@ -12,13 +15,19 @@ body {
 .block {
   width: 40px;
   height: 40px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
 }
 .block:nth-child(1) {
     background-color: tomato;
+    flex-basis: 50%;
 }
   
 .block:nth-child(2) {
     background-color: steelblue;
+    order: 3;
 }
   
 .block:nth-child(3) {
@@ -28,9 +37,11 @@ body {
   
 .block:nth-child(4) {
     background-color: green;
+    order: 4;
 }
   
 .block:nth-child(5) {
     background-color: orange;
-
+    order: 1;
+    flex-basis: 50%;
 }
