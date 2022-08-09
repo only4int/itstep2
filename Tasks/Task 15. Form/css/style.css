@@ -1,0 +1,22 @@
+form{
+    margin: 20px;
+}
+
+input[type="text"], input[type="email"]{
+    width: 200px;
+    font-size: 14px;
+    padding: 10px 5px;
+    border: 1px solid rgb(177, 177, 177);
+    background: #eee;
+    color: #000;
+}
+input[type="color"]{
+    width: 100px;
+}
+input[type="text"]:focus{
+    border: 1px solid #000;
+}
+.error{
+    border: 1px solid #f00;
+    color: #f00;
+}
