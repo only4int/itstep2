@@ -20,3 +20,16 @@ input[type="text"]:focus{
     border: 1px solid #f00;
     color: #f00;
 }
+.google-form{
+    padding: 20px 0;
+    position: relative;
+}
+.google-form label{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    font-size: 12px;
+    background: #fff;
+    padding: 3px;
+}
