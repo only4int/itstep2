@@ -1,0 +1,40 @@
+a{
+    position: fixed;
+    display: block;
+    color: #fff;
+    background: black;
+    padding: 15px 20px;
+    top: 40px;
+}
+.start{
+    left: calc(50% - 150px);
+}
+.end{
+    left: calc(50% + 30px);
+}
+.box1{
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 100px;
+    background: #000;
+    transition-property: background;
+    transition-duration: 3s;
+    position: fixed;
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 400px;
+    background: #000;
+    transition-property: background;
+    transition-duration: 3s;
+    position: fixed;
+}
+#cat:target .box1{
+    background: #fff;
+}
+#cat:target .box2{
+    background: #fff;
+}
