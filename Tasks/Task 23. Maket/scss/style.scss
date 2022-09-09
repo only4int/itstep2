@@ -1,8 +1,7 @@
-@import "./config/config";
-@import "./config/layout";
-@import "./config/typography";
-
-
-@import "./components/header";
-@import "./components/news";
-@import "./components/footer";
+@import "./config";
+@import "./header";
+@import "./mission";
+@import "./products";
+@import "./about";
+@import "./contacts";
+@import "./footer";
