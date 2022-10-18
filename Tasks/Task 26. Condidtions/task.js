@@ -77,7 +77,19 @@ var D = b*b - 4 * a * c; // дискриминант
 if(D > 0){ // будет 2 корня
     console.log((-b-D**0.5)/(2*a), (-b+D**0.5)/(2*a));
 } else if(D == 0){ // 1 корень
-    console.log((-b)/(2*a));
-} else{
+    console.log(`корень - ${(-b)/(2*a)}`);
+} else {
     console.log("нет корней");
+}
+
+console.log("Task 12");
+
+a = 1, b = 1;
+
+if(a != 0){
+    console.log(b/a);
+} else if(a == 0 && b == 0){
+    console.log("x - любое");
+} else {
+    console.log("нет корней")
 }
