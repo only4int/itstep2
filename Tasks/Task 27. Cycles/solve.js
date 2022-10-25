@@ -150,6 +150,86 @@ for(let i = 3; i <= N; i++){ // начинаем считать с 3 номер�
 
     prevprev = prev;
     prev = current;
+
 }
 
 console.log(current);
+
+console.log("Task 12.1");
+
+s = 0;
+
+for(let i = 100; i <=999; i++){
+    if((i % 10 == 0) && (i % 13 == 0)){
+        s += i;
+    }
+}
+console.log(s);
+
+console.log("Task 12.2");
+s = 0;
+i = 100;
+
+while(i <=999){
+    if((i % 10 == 0) && (i % 13 == 0)){
+        s += i;
+    }    
+
+    i++;
+}
+
+console.log(s);
+
+console.log("Task 12.3");
+s = 0;
+i = 100;
+
+do{
+    if((i % 10 == 0) && (i % 13 == 0)){
+        s += i;
+    }    
+
+    i++;
+}while(i <=999);
+
+console.log(s);
+
+console.log("Task 13");
+
+N = 123456789;
+var count = 0;
+var isPrime;
+
+for(let i = 1; i <= N; i++){
+    if(N % i == 0){
+       count++;
+    }
+}
+
+console.log(count);
+
+console.log("Task 14");
+
+N = 12;
+count = 0;
+var isPrime;
+
+for(let i = 2; i <= N; i++){
+    if(N % i == 0){
+        isPrime = true; // булевская переменная, которая отвечает за критерий простоты числа
+
+        for(let j = 2; j < i; j++){
+            if(i % j == 0){
+                isPrime = false;
+                break;
+            }
+        }
+
+        if(isPrime){
+            count++;
+        } 
+        
+    }
+}
+
+console.log(count);
