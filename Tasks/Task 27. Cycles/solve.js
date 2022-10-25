@@ -66,3 +66,90 @@ for(let i = 20; i <= 50; i++){
         console.log(i);
     }
 }
+
+console.log("Task 6");
+
+N = 100;
+s = 0;
+
+for(let i = 1; i <= N; i++){
+    s += i**2;
+}
+
+console.log(s);
+
+console.log("Task 7");
+
+var p = 1; //начальное произведение
+var m = 1;
+//(1+2)*(1+2+3)*...*(1+2+...+10) == 1*(1+2)*(1+2+3)*...*(1+2+...+10)
+for(let i = 1; i <= 10; i++){ // 10 итераций
+
+    p *= m;
+    m += i+1;
+
+}
+console.log(p);
+
+console.log("Task 8");
+
+N = 18;
+var isPrime = true; // булевская переменная, которая отвечает за критерий простоты числа
+
+for(let i = 2; i < N; i++){
+    if(N % i == 0){
+        isPrime = false;
+        break;
+    }
+}
+
+if(isPrime){
+    console.log(N, " - Простое число");
+} else {
+    console.log(N, " - Составное число");
+}
+
+console.log("Task 9");
+
+var M = 1000;
+var S = 100000;
+var years = 0;
+
+do{
+
+    M *= 1.2;
+    years++;
+
+}while(M <= S);
+
+console.log(years);
+
+console.log("Task 10");
+
+M = 1000;
+var price = 13;
+var iceCream = 0;
+
+while(price <= M){
+    M -= price;
+    iceCream++;
+}
+
+console.log(M, iceCream);
+
+console.log("Task 11");
+
+var prevprev = 1, // предпредыдущее
+    prev = 1, // предыдущее
+    current; //текущее число
+N = 15; // номер числа Фибоначчи
+
+for(let i = 3; i <= N; i++){ // начинаем считать с 3 номера последовательности
+
+    current = prev + prevprev; // расчет текущего числа с номером i
+
+    prevprev = prev;
+    prev = current;
+}
+
+console.log(current);
