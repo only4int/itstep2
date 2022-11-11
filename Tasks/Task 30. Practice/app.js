@@ -184,7 +184,7 @@ if(isAsc && isDesc){
 
 console.log("Task 10");
 
-a = [1, 2, 4, 2, 1, 5, 7, 2, 0, 4];
+a = [8, 8, 8, 8, 7, 3, 8, 3, 6, 6];
 console.log(a);
 
 for(let i = 0; i < a.length; i++){
@@ -198,7 +198,8 @@ for(let i = 0; i < a.length; i++){
             for(let k = j; k < a.length - 1; k++){
                 a[k] = a[k+1];
             }
-            a.length--;             
+            a.length--;  
+            j--;            
         }
     }
     if(isFind){ // копии элемента найдены
