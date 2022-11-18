@@ -60,3 +60,5 @@ switch (x){
     default:
         console.log("Черт его знает");
 }   
+
+
