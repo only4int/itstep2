@@ -222,3 +222,32 @@ const compareArrow = (a , b) => {
     }
     return -1;    
 }
+
+console.log("Task 25:");
+a = [2, -1, 0, 1, -2, 4];
+
+sum = a.filter((item) => item > 0)
+       .map((item) => item ** 2)
+       .reduce((sum, item) => sum + item, 0);
+console.log(sum);
+
+// includes - проверяет наличие
+// indexOf - находит индекс элемента в массиве
+// [1, 3, 4, 6, 2, 2, 1, 3] => [1, 3, 4, 6, 2] - удалить повторы
+
+a = [1, 3, 4, 6, 2, 2, 1, 3];
+
+let unique = [];
+
+a.forEach(function(item){
+    if(!unique.includes(item))
+        unique.push(item);
+})
+
+console.log(unique);
+
+unique = a.filter(function(item, i){
+    return a.indexOf(item) == i;
+})
+
+console.log(unique);
