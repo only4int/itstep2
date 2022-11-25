@@ -55,7 +55,12 @@ console.log(max-min);
 console.log("Task 5:");
 a = [2, -1, 0, 1, -2, 4];
 
+
 a.sort((a, b) => a - b);
+
+a.sort(function(a, b){
+    return a - b;
+})
 
 console.log(a[a.length-1] - a[0]);
 
