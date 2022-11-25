@@ -81,3 +81,35 @@ console.log("Получить кусочек строки от начально�
 str = x.substr(2,4); // устаревшая функция
 
 console.log(str);
+
+
+console.log("Task 13");
+str = "Мама мыла раму";
+
+str = str.split(" ")
+         .map((item) => item[0].toUpperCase() + item.slice(1))
+         .join(" ");
+
+console.log(str);
+
+console.log("Task 10");
+
+str = '2025-12-31';
+
+//str = str.split("-").reverse().join(".");
+str = str.split("-");
+str = str.reverse();
+str = str.join(".");
+console.log(str);
+
+
+console.log("Task 14");
+str = "var_test_text";
+
+str = str.split("_").map((item, index) => {
+    if(index != 0)
+        return item[0].toUpperCase() + item.slice(1)
+    return item;
+    }).join("");
+
+console.log(str);
