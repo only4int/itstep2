@@ -16,6 +16,12 @@ let cat = {
     },
     __proto__: animal
 }
+let dog = {
+    sound(){
+        console.log("Gau-gau");
+    },
+    __proto__: animal
+}
 // cat.__proto__ = animal;
 animal.name = "Пушок";
 console.log(animal.name, animal.color, animal.weight );
@@ -38,3 +44,6 @@ console.log(cat.name, cat.color, cat.__proto__.name);
 for(let key in cat){
     console.log(key, cat[key]);
 }
+
+cat.sound();
+dog.sound();
