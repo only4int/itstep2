@@ -68,7 +68,10 @@ class Animal{
 class Cat extends Animal{
 
     breed;
-
+    constructor(name, color, breed){
+        super(name, color); // переопределение конструктора
+        this.breed = breed;
+    }
     sound(){
         console.log("Meow");
     }
@@ -79,9 +82,7 @@ class Cat extends Animal{
 }
 
 let animal = new Animal("Животное", 'Хаки');
-let barsik = new Cat("Барсик", "Черный");
-
-barsik.breed = "Двортерьер";
+let barsik = new Cat("Барсик", "Черный", "Двортерьер");
 
 console.log(animal, barsik);
 animal.print();
