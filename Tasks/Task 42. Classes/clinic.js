@@ -66,6 +66,12 @@ class Horse extends Animal{
 }
 
 class Doctor{
+
+    cat; // class Cat
+    constructor(cat){
+        this.cat = cat;
+    }
+
     treatAnimal(animal){
         console.log(animal.food, animal.location);
     }
@@ -76,7 +82,9 @@ let cat = new Cat("milk", "street");
 let dog = new Dog("meat", "street");
 let horse = new Horse("herb", "house");
 
-let Aibolit = new Doctor();
+let Aibolit = new Doctor(cat);
+
+console.log(Aibolit.cat.location);
 
 let animals = [];
 animals.push(cat);

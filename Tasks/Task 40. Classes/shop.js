@@ -37,10 +37,10 @@ class User{
     password;
     basket;
 
-    constructor(login, password){
+    constructor(login, password, basket){
         this.login = login;
         this.password = password;
-        this.basket = new Basket();
+        this.basket = basket;
     }
 
     addProduct(product){
@@ -68,8 +68,9 @@ food.addProduct(cake);
 clothes.addProduct(socks);
 
 console.log(food, clothes);
+let basket = new Basket();
 
-let peter = new User("Петя","qwerty");
+let peter = new User("Петя","qwerty", basket);
 
 peter.addProduct(milk);
 peter.addProduct(bread);
