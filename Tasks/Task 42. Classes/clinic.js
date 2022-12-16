@@ -7,6 +7,9 @@ class Animal{
         this.location = location;
     }
 
+    toString(){
+        return `Food: ${this.food}, locations: ${this.location}`;
+    }
     sleep(){
         console.log("animal sleep");
     }
@@ -86,4 +89,5 @@ animals.forEach(function(animal){
     animal.makeNoise();
     animal.eat();
     animal.sleep();
+    console.log(animal.toString());
 })
