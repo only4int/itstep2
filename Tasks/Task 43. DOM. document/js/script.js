@@ -1,7 +1,7 @@
 document.write("<h1>Привет мир</h1>");
 document.write("<h2>Привет мир2</h2>");
 
-var fruits = ["apple", "orange", "lime","watermelon"];
+var fruits = ["apple", "orange", "lime", "watermelon"];
 
 let  out = "<ul>";
 fruits.forEach(function(item){
@@ -17,8 +17,15 @@ out += "</ul>";
  * </ul>
  */
 document.write(out);
-out = "<p><ins>1</ins> <span>2</span> <ins>3</ins> <span>4</span> <ins>5</ins> 6</p>";
-document.write(out);
+let out1 = `<p>
+        <ins>1</ins> 
+        <span>2</span> 
+        <ins>3</ins> 
+        <span>4</span> 
+        <ins>5</ins> 
+        6
+    </p>`;
+document.write(out1);
 out = "<div class='box'>";
 
 for(let i = 1; i <= 30; i++){
