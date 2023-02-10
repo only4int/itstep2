@@ -129,3 +129,55 @@ if(fourthElement){
         }
     }
 }
+
+let fifthElement = document.querySelector("#fifth-element");
+if(fifthElement){
+    fifthElement.insertAdjacentHTML("beforebegin", "<div>1</div><div>2</div>");
+    fifthElement.insertAdjacentHTML("afterend", "<div>3</div><div>4</div>");
+
+    let div1 = fifthElement.parentElement.firstElementChild;
+    let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресение"];
+
+    let out = "<ol>";
+    days.forEach((day) => {
+        out += `<li>${day}</li>`;
+    });
+    out += "</ol>";
+    div1.insertAdjacentHTML("beforeend", out);
+
+    div1.firstElementChild.lastElementChild.style.color = "#f00";
+    div1.firstElementChild.lastElementChild.previousElementSibling.style.color = "#f00";
+    //div1.querySelector("ol li:last-child");
+    //div1.firstElementChild.children[5], div1.firstElementChild.children[6]
+
+    let div2 = fifthElement.previousElementSibling;
+
+    let span1 = document.createElement("span");
+    span1.innerHTML = "Первый span";
+    div2.insertAdjacentElement("afterbegin", span1);
+    let span2 = document.createElement("span");
+    span2.innerHTML = "Второй span";
+    div2.insertAdjacentElement("beforeend", span2);
+
+    span1.innerHTML = span1.innerHTML + `(${span1.innerHTML.length})`; 
+    span2.innerHTML = span2.innerHTML + `(${span2.innerHTML.length})`; 
+
+    let div3 = fifthElement.nextElementSibling;
+
+    //div3.innerHTML = `<a href="//google.com">${div3.innerHTML}</a>`;
+
+    let a = document.createElement("a");
+    a.href = "https://google.com/";
+    a.innerHTML = div3.innerHTML;
+    div3.innerHTML = "";
+    div3.insertAdjacentElement("afterbegin", a);
+    a.style.border = "1px dotted #0f0";
+    a.style.textDecoration = "underline";
+
+    let div4 = fifthElement.nextElementSibling.nextElementSibling;
+
+    div4.outerHTML = `<article>${div4.innerHTML}</article>`;
+
+    let article = fifthElement.nextElementSibling.nextElementSibling;
+    article.classList.add("news", "good-news");
+}
