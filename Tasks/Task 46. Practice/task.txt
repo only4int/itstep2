@@ -1,0 +1,20 @@
+1. Используя только создание элементов через объекты создать следующий html-код:
+        <article class="news__item">
+            <a href="/news/we-offer-a-new-fertilizer-potassium-salt-60-nod/">
+                <div class="news__img">
+                    <img src="/upload/iblock/950/9509c6f8dc75758c59e66de60cffa317.webp" alt="We offer a new fertilizer – potassium salt 60% NOD">
+                    <time>06.01.2023</time>
+                </div>
+                <div class="news__desciption">
+                    <div class="news__title">
+                        <h4>We offer a new fertilizer – potassium salt 60% NOD</h4>
+                    </div>
+                    <div class="news__text">
+                        <p>We are pleased to inform you that we have decided to expand our product range and add another noteworthy and effective product, potassium salt 60% NOD.</p>
+                    </div>
+                    <div class="news__more">
+                        <span>more</span>
+                    </div>
+                </div>
+            </a>
+        </article>
