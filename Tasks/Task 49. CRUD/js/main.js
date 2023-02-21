@@ -1,5 +1,5 @@
-let button = document.querySelector("button");
-button.addEventListener("click", function(){
+let addButton = document.querySelector(".btn_add");
+addButton.addEventListener("click", function(){
     let div = document.querySelector("div");
 
     let ul = div.querySelector("ul");
@@ -23,7 +23,7 @@ button.addEventListener("click", function(){
     deleteButton.innerText = "Удалить";
     li.insertAdjacentElement("beforeend", deleteButton);
 
-    deleteButton.addEventListener("click", () => {
+    deleteButton.addEventListener("click", function() {
         let ul = this.parentElement.parentElement;
         this.parentElement.remove(); //this = deleteButton
 
@@ -32,18 +32,26 @@ button.addEventListener("click", function(){
         }
     })
 
-    editButton.addEventListener("click", () => {
+    editButton.addEventListener("click", function()  {
         let text = this.parentElement.firstChild.nodeValue;
-
-        this.querySelector("input").value = text;
+        document.querySelector("input").value = text;
+        let editLi = document.querySelector(".edit");
+        if(editLi){
+            editLi.classList.remove("edit");
+        }
+        this.parentElement.classList.add("edit");
     });
-    // li.addEventListener("click", function(){
-        
-    //     let parent = this.parentElement;
-    //     this.remove();
+});
 
-    //     if(parent.children.length  == 0){
-    //         parent.remove();
-    //     }
-    // })
+
+let saveButton = document.querySelector(".btn_save");
+
+saveButton.addEventListener("click", function(){
+    let task = document.querySelector("input").value;
+    let editLi = document.querySelector(".edit");
+    if(editLi){
+        editLi.firstChild.nodeValue = task;
+        editLi.classList.remove("edit");
+        document.querySelector("input").value = "";
+    }
 });
