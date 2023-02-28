@@ -188,8 +188,8 @@ select,.form-control input[type="file"]{
     border: 1px solid #bfbfbf;
     box-sizing: border-box;
 }
-.error input[type="password"]{
-    border-color: red;
+.error input, .error textarea, .error select{
+    border-color: red !important;
 }
 .error-text{
     color: red;
