@@ -21,8 +21,9 @@ form.addEventListener("submit", function(event){
     let phoneInput = document.querySelector("#phone");
     let aboutInput = document.querySelector("#about");
     let educationInput = document.querySelector("#education");
+    let avatarInput = document.querySelector("#avatar");
 
-    let fields = [nameInput, emailInput, phoneInput, aboutInput, educationInput];
+    let fields = [nameInput, emailInput, phoneInput, aboutInput, educationInput, avatarInput];
 
     fields.forEach((field) => {
         if(field.value == ""){
@@ -86,6 +87,12 @@ form.addEventListener("submit", function(event){
 
         div.innerHTML += `Хобби: ${hobbyValue.join(",")}<br>`;
         div.innerHTML += `О себе: ${aboutInput.value}<br>`;
+
+        let path = avatarInput.value;
+        let pathArray = path.split("\\");
+        let file = pathArray[pathArray.length-1];
+        div.innerHTML += `Аватар: ${file}<br>`;
+
         this.reset(); // очищение формы this==form
     }
 })
