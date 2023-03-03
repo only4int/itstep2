@@ -35,10 +35,10 @@ form.addEventListener("submit", function(event){
         }
     });
 
-    let sexs = ["sex-m", "sex-f"];
+    let sexs = ["#sex-m", "#sex-f"];
 
     let checked = sexs.some((radioId) => {
-        return document.querySelector("#"+radioId).checked; //document.querySelector("#"+radioId) - input
+        return document.querySelector(radioId).checked; //document.querySelector(radioId) - input
     })
 
     if(!checked){
@@ -49,10 +49,10 @@ form.addEventListener("submit", function(event){
         hasError = true;
     }
 
-    let hobbies = ["hobby-1", "hobby-2", "hobby-3"];
+    let hobbies = ["#hobby-1", "#hobby-2", "#hobby-3"];
 
     checked = hobbies.some((checkboxId) => {
-        return document.querySelector("#"+checkboxId).checked; //document.querySelector("#"+checkbox) - input
+        return document.querySelector(checkboxId).checked; //document.querySelector(checkbox) - input
     })
 
     if(!checked){
@@ -79,8 +79,8 @@ form.addEventListener("submit", function(event){
         let hobbyValue = [];
 
         hobbies.forEach((hobby) => {
-            if(document.querySelector("#"+hobby).checked){
-                hobbyValue.push(document.querySelector("#"+hobby).value);
+            if(document.querySelector(hobby).checked){
+                hobbyValue.push(document.querySelector(hobby).value);
             }
         })
 
