@@ -11,6 +11,10 @@ body{
 .box{
     width: 400px;
     height: 400px;
+    background-color: chartreuse;
+}
+.bg-blue{
+    background-color: aqua;
 }
 .box > div{
     width: 100px;
