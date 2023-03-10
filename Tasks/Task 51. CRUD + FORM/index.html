@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="" method="post" name="reg_form" class="reg-form" id="reg_form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-label">
+                                <label for="name">Название населнного пункта:</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-control">
+                                <input type="text" name="name" id="name" value="" placeholder="Введите название">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-label">
+                                <label for="education">Район:</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-control">
+                                <select name="district" id="district">
+                                    <option value="">Выберите район</option>
+                                    <option value="Витебский район">Витебский район</option>
+                                    <option value="Бешенковичский район">Бешенковичский район</option>
+                                    <option value="Верхнедвинский район">Верхнедвинский район</option>
+                                    <option value="Глубокский район">Глубокский район</option>
+                                    <option value="Городокский район">Городокский район</option>
+                                    <option value="Докшицкий район">Докшицкий район</option>
+                                    <option value="Дубровенский район">Дубровенский район</option>
+                                    <option value="Лепельский район">Лепельский район</option>
+                                    <option value="Лиозненский район">Лиозненский район</option>
+                                    <option value="Оршанский район">Оршанский район</option>
+                                    <option value="Полоцкий район">Полоцкий район</option>
+                                    <option value="Поставский район">Поставский район</option>
+                                    <option value="Россонский район">Россонский район</option>
+                                    <option value="Сенненский район">Сенненский район</option>
+                                    <option value="Толочинский район">Толочинский район</option>
+                                    <option value="Ушачский район">Ушачский район</option>
+                                    <option value="Чашникский район">Чашникский район</option>
+                                    <option value="Шарковщинский район">Шарковщинский район</option>
+                                    <option value="Шумилинский район">Шумилинский район</option>
+                                    <option value="Браславский район">Браславский район</option>
+                                    <option value="Миорский район">Миорский район</option>
+                                    <option value="Поставский район">Поставский район</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-label">
+                                <label>Тип населенного пункта:</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-control">
+                                <div class="form-control-radio">
+                                    <input type="radio" name="type" id="type-1" value="Город">
+                                    <label for="type-1">Город</label>
+                                </div>
+                                <div class="form-control-radio">
+                                    <input type="radio" name="type" id="type-2" value="Поселок городского типа">
+                                    <label for="type-2">Поселок городского типа</label>
+                                </div>
+                                <div class="form-control-radio">
+                                    <input type="radio" name="type" id="type-3" value="Деревня">
+                                    <label for="type-3">Деревня</label>
+                                </div>
+                                <div class="form-control-radio">
+                                    <input type="radio" name="type" id="type-4" value="Село">
+                                    <label for="type-4">Село</label>
+                                </div>
+                                <div class="form-control-radio">
+                                    <input type="radio" name="type" id="type-5" value="Хутор">
+                                    <label for="type-5">Хутор</label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-control">
+                                <button type="submit">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="result">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th width="200">Название</th>
+                                <th width="200">Раойн</th>
+                                <th width="200">Тип</th>
+                                <th width="200">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
