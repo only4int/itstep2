@@ -48,6 +48,7 @@ form.addEventListener("submit", function(event){
             });
             saveButton.innerText = "Добавить";
             saveButton.classList.remove("save");
+            tr.classList.remove("edit-row");
         } else {
             let tr = document.createElement("tr");
             data.forEach((value, name) => {
