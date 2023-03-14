@@ -16,6 +16,9 @@ body{
 .bg-blue{
     background-color: aqua;
 }
+.bg-red{
+    color: red;
+}
 .box > div{
     width: 100px;
     height: 100px;
