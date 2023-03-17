@@ -13,3 +13,11 @@ document.addEventListener('keydown', function(event) {
    }
 
 });                                                                                                                     
+
+let input = document.querySelector("input");
+
+input.addEventListener("keypress", function(event){
+    if(event.key == " "){
+        event.preventDefault();
+    }
+});
