@@ -1,4 +1,4 @@
-var field = new Field(4,4);
+var field = new Field(10,5);
 field.addWall(1,0);
 field.addWall(1,1);
 field.addWall(1,3);
