@@ -48,6 +48,10 @@ class GameController{
             }
                     
             table.addEventListener("click", (event) => {
+
+                if(document.querySelector(".current").innerHTML == ""){
+                    return false;
+                }
                 let td = event.target;
             
                 if(td.tagName != "TD")
@@ -62,17 +66,13 @@ class GameController{
                 if(this.game.currentPlayer == 1){
                     this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,1);
                     td.classList.add("k");
-                    this.game.currentPlayer = 2;
                     this.game.field.addX(x,y);
                     
                 } else {
                     this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,-1);
                     td.classList.add("n");
-                    this.game.currentPlayer = 1;
                     this.game.field.addO(x,y);         
                 }
-
-                //this.showLog();
 
                 let winner = this.game.checkWinner();
                 if(winner > 0){
@@ -82,6 +82,11 @@ class GameController{
                     document.querySelector(".current").innerHTML = ``;
                     document.querySelector(".result").innerHTML = `Ничья`;
                 } else {
+                    if(this.game.currentPlayer == 1){
+                        this.game.currentPlayer = 2;
+                    } else {
+                        this.game.currentPlayer = 1;
+                    }
                     document.querySelector(".current").innerHTML = `Ходит игрок <b>${this.game.getCurrentPlayerName()}</b>`;
                 }       
             });
