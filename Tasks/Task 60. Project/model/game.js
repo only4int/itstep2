@@ -53,8 +53,8 @@ class Game{
         }
         result[7] = sum;
     
-        let resK = Math.max.apply(null, result);
-        let resN = Math.min.apply(null, result);
+        let resK = Math.max.apply(null, result); // сумма по крестикам
+        let resN = Math.min.apply(null, result); // сумма по ноликам
     
         if(resK == 3)
             return 1;

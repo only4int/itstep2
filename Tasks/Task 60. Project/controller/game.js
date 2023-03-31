@@ -1,6 +1,6 @@
 class GameController{
 
-    game;
+    game; // объект Game
 
     login(){
         document.forms.start_form.classList.add("d-none");
@@ -47,11 +47,45 @@ class GameController{
                 table.append(row);  
             }
                     
-            table.addEventListener("click", this.play, false);
-        
-            document.querySelector(".field").append(table);
+            table.addEventListener("click", (event) => {
+                let td = event.target;
+            
+                if(td.tagName != "TD")
+                    return false;  
+            
+                let x = td.cellIndex;    
+                let y = td.parentNode.rowIndex;
+                
+                if(this.game.field.cells[x][y] != 0)
+                    return false;
+            
+                if(this.game.currentPlayer == 1){
+                    this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,1);
+                    td.classList.add("k");
+                    this.game.currentPlayer = 2;
+                    this.game.field.addX(x,y);
+                    
+                } else {
+                    this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,-1);
+                    td.classList.add("n");
+                    this.game.currentPlayer = 1;
+                    this.game.field.addO(x,y);         
+                }
 
-           // this.createField();
+                //this.showLog();
+
+                let winner = this.game.checkWinner();
+                if(winner > 0){
+                    document.querySelector(".result").innerHTML = `Победил игрок <b>${this.game.getCurrentPlayerName()}</b>`;
+                    document.querySelector(".current").innerHTML = ``;
+                } else if(this.game.checkDraw()){
+                    document.querySelector(".current").innerHTML = ``;
+                    document.querySelector(".result").innerHTML = `Ничья`;
+                } else {
+                    document.querySelector(".current").innerHTML = `Ходит игрок <b>${this.game.getCurrentPlayerName()}</b>`;
+                }       
+            });
+            document.querySelector(".field").append(table);
 
             document.querySelector(".current").innerHTML = `Ходит игрок <b>${this.game.getCurrentPlayerName()}</b>`;
             document.querySelector(".game_form").classList.remove("d-none");
@@ -62,48 +96,6 @@ class GameController{
 
     createField(){
 
-    }
-
-    play(event){
-        
-        let td = event.target;
-    
-        if(td.tagName != "TD")
-            return false;  
-    
-        let x = td.cellIndex;    
-        let y = td.parentNode.rowIndex;
-        
-        if(this.game.field.cells[x][y] != 0)
-            return false;
-    
-        if(this.game.currentPlayer == 1){
-            this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,1);
-            td.classList.add("k");
-            this.game.currentPlayer = 2;
-            this.game.field.addX(x,y);
-            
-        } else {
-            this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,-1);
-            td.classList.add("n");
-            this.game.currentPlayer = 1;
-            this.game.field.addO(x,y);         
-        }
-
-        this.showLog();
-
-        let winner = this.game.checkWinner();
-        if(winner > 0){
-            document.querySelector(".result").innerHTML = `Победил игрок <b>${this.game.getCurrentPlayerName()}</b>`;
-            document.querySelector(".current").innerHTML = ``;
-            document.querySelector(".field table").removeEventListener("click", this.play, false);
-        } else if(this.game.checkDraw()){
-            document.querySelector(".current").innerHTML = ``;
-            document.querySelector(".field table").removeEventListener("click", this.play, false);
-            document.querySelector(".result").innerHTML = `Ничья`;
-        } else {
-            document.querySelector(".current").innerHTML = `Ходит игрок <b>${this.game.getCurrentPlayerName()}</b>`;
-        }       
     }
 
     showLog(){
