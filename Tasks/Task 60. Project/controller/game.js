@@ -64,7 +64,7 @@ class GameController{
                     return false;
             
                 if(this.game.currentPlayer == 1){
-                    this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,1);
+                    this.game.logs.addMove(this.game.getCurrentPlayerName(),x,y,1); // this.game.logs.moves
                     td.classList.add("k");
                     this.game.field.addX(x,y);
                     
@@ -74,13 +74,17 @@ class GameController{
                     this.game.field.addO(x,y);         
                 }
 
+
+
                 let winner = this.game.checkWinner();
                 if(winner > 0){
                     document.querySelector(".result").innerHTML = `Победил игрок <b>${this.game.getCurrentPlayerName()}</b>`;
+                    this.game.logs.addString(`Победил игрок <b>${this.game.getCurrentPlayerName()}</b>`);
                     document.querySelector(".current").innerHTML = ``;
                 } else if(this.game.checkDraw()){
                     document.querySelector(".current").innerHTML = ``;
                     document.querySelector(".result").innerHTML = `Ничья`;
+                    this.game.logs.addString(`Ничья`);
                 } else {
                     if(this.game.currentPlayer == 1){
                         this.game.currentPlayer = 2;
@@ -88,7 +92,13 @@ class GameController{
                         this.game.currentPlayer = 1;
                     }
                     document.querySelector(".current").innerHTML = `Ходит игрок <b>${this.game.getCurrentPlayerName()}</b>`;
-                }       
+                }  
+                
+                let logsBlock = document.querySelector(".logs");
+                logsBlock.innerHTML = ""; 
+                this.game.logs.moves.forEach(element => {
+                    logsBlock.innerHTML += `<p>${element}</p>`; 
+                });     
             });
             document.querySelector(".field").append(table);
 

@@ -11,4 +11,7 @@ class Log {
         else
             this.moves.push(`Игрок <i>${name}</i> поставил нолик в клетку [${x},${y}]`);
     }
+    addString(str){
+        this.moves.push(str);
+    }
 }
