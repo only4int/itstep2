@@ -17,16 +17,16 @@
         function Form(){    
 
             function increase(event){
-                let p = document.querySelector("p");
-                let value = +p.innerText;
+                let h3 = document.querySelector("h3");
+                let value = +h3.innerText;
                 value++;
-                p.innerText = value; 
+                h3.innerText = value; 
             }
 
 
             return  (<div>
+                        <h3>0</h3>
                         <button onClick={increase}>Увеличить на 1</button>
-                        <p>0</p>
                     </div>);
         }
 
