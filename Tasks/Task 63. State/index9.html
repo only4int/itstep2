@@ -15,11 +15,6 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function Calculator() {
-            const [x, setX] = React.useState(0);
-            const [y, setY] = React.useState(0);
-            const [operation, setOperation] = React.useState("+");
-            const [result, setResult] = React.useState("");
-
             const [data, setData] = React.useState({
                 x: 0,
                 y: 0,
@@ -28,55 +23,50 @@
             })
 
             function  handleChangeX(event){
-                setData(...data, x: +event.target.value, result: );
-                setX(+event.target.value);
-                calculate();
+                setData({...data, x: +event.target.value, result: calculate(+event.target.value, data.y, data.operation)});
             }
 
             function handleChangeY(event) {
-                setY(+event.target.value);
-                calculate();
+                setData({ ...data, y: +event.target.value, result: calculate(data.x, +event.target.value, data.operation) });
             }
 
             function handleChangeOperation(event) {
-                setOperation(event.target.value);
-                calculate();
+                setData({ ...data, operation: event.target.value, result: calculate(data.x, data.y, event.target.value) });
             }
 
-            function calculate(){
+            function calculate(x,y, operation){
                 switch(operation){
                     case "+":
                         return `Сумма: ${x}+${y}=${x+y}`;
                         break;
                     case "-":
-                        setResult(`Разность: ${x}-${y}=${x-y}`);
+                        return  `Разность: ${x}-${y}=${x-y}`;
                         break;
                     case "*":
-                        setResult(`Произведение: ${x}*${y}=${x*y}`);
+                        return  `Произведение: ${x}*${y}=${x*y}`;
                         break;
                     case "/":
                         if(y == 0){
-                            setResult("Деление на ноль");
+                            return  "Деление на ноль";
                         } else {
-                            setResult(`Частное: ${x}:${y}=${x / y}`);
+                            return  `Частное: ${x}:${y}=${x / y}`;
                         }    
                 }
             }
 
             return (
                 <div>
-                    <input type="text" name="x" id="x" value={x} onChange={handleChangeX}/>
-                    <input type="text" name="y" id="y" value={y} onChange={handleChangeY} />
+                    <input type="text" name="x" id="x" value={data.x} onChange={handleChangeX}/>
+                    <input type="text" name="y" id="y" value={data.y} onChange={handleChangeY} />
 
-                    <select name="operation" id="operation" value={operation} onChange={handleChangeOperation}>
+                    <select name="operation" id="operation" value={data.operation} onChange={handleChangeOperation}>
                         <option value="+">Сумма</option>
                         <option value="-">Разность</option>
                         <option value="*">Произведение</option>
                         <option value="/">Частное</option>    
                     </select>
-
                     <div>
-                        {result}
+                        {data.result}
                     </div>
                 </div>
 
