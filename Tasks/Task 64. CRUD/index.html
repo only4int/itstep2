@@ -34,15 +34,29 @@
                 }
             ]);
 
+            const [editIndex, setEditIndex] = React.useState(-1);
+
             function handleFormSubmit(event){
                 event.preventDefault();
-                setBooks([...books, book]);
-                setBook({
-                    title: "",
-                    author: "",
-                    genre: "Детектив",
-                    pages: 0
-                });
+                if(editIndex == - 1){
+                    setBooks([...books, book]);
+                    setBook({
+                        title: "",
+                        author: "",
+                        genre: "Детектив",
+                        pages: 0
+                    });
+                } else {
+                    books[editIndex] = book;
+                    setBooks([...books]);
+                    setBook({
+                        title: "",
+                        author: "",
+                        genre: "Детектив",
+                        pages: 0
+                    });
+                    setEditIndex(-1);
+                }
             }
 
             function handleTitleChange(event){
@@ -58,6 +72,25 @@
                 setBook({ ...book, pages: event.target.value });
             }
             
+            function handleBookDelete(event){
+                let index = +event.target.dataset.id;
+                books.splice(index, 1);
+                setBooks([...books]);
+            }
+
+            function handleBookEdit(event){
+                let index = +event.target.dataset.id; // event.target - кнопка dataset.id - атрибут data-id кнопки
+                // index - номер книги в массиве books
+                let editBook = books[index]; // редактируемая книга, поулченная по номеру элемента в массиве
+                setBook({
+                    title: editBook.title,
+                    author: editBook.author,
+                    genre: editBook.genre,
+                    pages: editBook.pages
+                });
+                setEditIndex(index);
+            }
+
             return <>
                 <div>
                     <form action="" onSubmit={handleFormSubmit}>
@@ -82,7 +115,7 @@
                             <input type="text" name="pages" id="pages" value={book.pages} onChange={handlePagesChange} />
                         </div>
                         <div>
-                            <button type="submit">Сохранить</button>    
+                            <button type="submit">{editIndex > -1 ? <>Сохранить</> : <>Добавить</>}</button>    
                         </div>    
                     </form>
                 </div>
@@ -105,8 +138,8 @@
                                             <td>{item.genre}</td>
                                             <td>{item.pages}</td>
                                             <td>
-                                                <button>Редактировать</button>
-                                                <button>Удалить</button>
+                                                <button onClick={handleBookEdit} data-id={index}>Редактировать</button>
+                                                <button onClick={handleBookDelete} data-id={index}>Удалить</button>
                                             </td>
                                         </tr>
                             })
@@ -116,9 +149,6 @@
             </>;
 
         }
-
-
-
         ReactDOM.createRoot(
             document.getElementById("app")
         )
@@ -126,5 +156,5 @@
             <App />
         )
         </script>
-</body>
+    </body>
 </html>
