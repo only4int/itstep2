@@ -53,25 +53,24 @@
             function validate(){
                 let isValid = true;
                 if(form.title == ""){
-                    setFormError({...formError, title: "Поле не заполнено"});
+                    formError.title = "Поле не заполнено";
                     isValid = false;
                 }
                 if(form.text == "") {
-                    setFormError({ ...formError, text: "Поле не заполнено" });
+                    formError.text = "Поле не заполнено";
                     isValid = false;
                 }
                 if(form.image == "") {
-                    setFormError({ ...formError, image: "Картинка не выбрана" });
+                    formError.image = "Картинка не выбрана";
                     isValid = false;
                 }
-
+                setFormError({...formError});
                 return isValid;
             }
 
             function handleFormSubmit(event){
                 event.preventDefault();
                 if(!validate()){
-                    setFormError({ ...formError});
                     return false;
                 }
                 if(form.id == 0){              
@@ -144,17 +143,17 @@
                         <div class="mb-3">
                             <label for="title" class="form-label">Название</label>
                             <input type="text" class="form-control" id="title" value={form.title} onChange={handleTitleChange}/>
-                            {formError.title != "" && <div class="invalid-feedback">{formError.title}</div>}
+                            {formError.title != "" && <div>{formError.title}</div>}
                         </div>
                         <div class="mb-3">
                             <label for="text" class="form-label">Текст</label>
                             <textarea class="form-control" id="text" rows="3" value={form.text} onChange={handleTextChange}/>
-                            {formError.text != "" && <div class="invalid-feedback">{formError.text}</div>}
+                            {formError.text != "" && <div>{formError.text}</div>}
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Картинка</label>
                             <input type="text" class="form-control" id="image" value={form.image} onChange={handleImageChange}/>
-                            {formError.image != "" && <div class="invalid-feedback">{formError.image}</div>}
+                            {formError.image != "" && <div>{formError.image}</div>}
                         </div>
                         <div class="mb-3">
                             <input type="hidden" id="id" value={form.id} onChange={handleIdChange} />
