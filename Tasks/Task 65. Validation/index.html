@@ -55,14 +55,20 @@
                 if(form.title == ""){
                     formError.title = "Поле не заполнено";
                     isValid = false;
+                } else {
+                    formError.title = "";
                 }
                 if(form.text == "") {
                     formError.text = "Поле не заполнено";
                     isValid = false;
+                } else {
+                    formError.text = "";
                 }
                 if(form.image == "") {
                     formError.image = "Картинка не выбрана";
                     isValid = false;
+                } else {
+                    formError.image = "";
                 }
                 setFormError({...formError});
                 return isValid;
@@ -183,12 +189,7 @@
 
         
         
-        ReactDOM.createRoot(
-            document.getElementById("app")
-        )
-        .render(
-            <Blog />
-        )
+
     </script>
 </body>
-</html>
+</html>       
