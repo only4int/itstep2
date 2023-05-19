@@ -3,7 +3,9 @@ const ReactDOM = require("react-dom/client");
 const redux = require("redux");
 const Provider = require("react-redux").Provider;
 const reducer = require("./reducer.jsx");
-const AppView = require("./appview.jsx");
+const AppView = require("./appview.jsx"); 
+
+// require = import - подключить
  
 const store = redux.createStore(reducer);
  

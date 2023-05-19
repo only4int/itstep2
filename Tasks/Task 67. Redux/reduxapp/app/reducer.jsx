@@ -1,7 +1,7 @@
 const Map = require("immutable").Map; // const Map - название нашей переменной, 
-//require - подключение, immutable - название пакета, который мы подключаем, require("immutable").Map - кподключение объекта Map из пакета immutable 
+//require - подключение, immutable - название пакета, который мы подключаем, require("immutable").Map - кподключение объекта Map из пакета immutable; Map = {} - неизменяемый
  
-const reducer = function(state = Map(), action) {
+const reducer = function(state = Map(), action) { // Map() - наша переменная
   switch (action.type) {
     case "SET_STATE":
         return state.merge(action.state);
