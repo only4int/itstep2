@@ -1,6 +1,12 @@
 const reducer = (state = {}, action) => {
 
     switch(action.type){
+        case "INIT":
+            return {...state,
+                products: action.products,
+                user: action.user,
+                lastIdProduct: action.lastIdProduct
+            }
         case "PRODUСT_ADD":
             let newId = ++state.lastIdProduct;
             let newProduct  = {

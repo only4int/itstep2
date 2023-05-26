@@ -1,10 +1,13 @@
 const React = require("react");
 const connect = require("react-redux").connect;
 const actions = require("../actions/actions.jsx");
+const UserInfo = require("./UserInfo.jsx");
 
-const AppView = (props) => {
+const AppView = (props) => { //props.products, props.currentUser
 
-    return <h1>Hello world!</h1>;
+    return <>
+        <UserInfo user={props.currentUser}/>
+    </>;
 
 }
 
