@@ -1,10 +1,14 @@
 const React = require("react");
 const ReactDOM = require("react-dom/client");
+const store = require("./store.jsx");
+const AppView = require("./components/AppView.jsx");
+const Provider = require("react-redux").Provider;
 
- 
 ReactDOM.createRoot(
     document.getElementById("app")
 )
 .render(
-    <h1>Hello world!</h1>
+    <Provider store={store}>
+        <AppView/>
+    </Provider>    
 );

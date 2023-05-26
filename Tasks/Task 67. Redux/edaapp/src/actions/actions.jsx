@@ -25,3 +25,5 @@ const editProduct = (id, product) => {
         product
     }
 }
+
+module.exports = {addProduct, deleteProduct, editProduct}
