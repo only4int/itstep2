@@ -2,13 +2,13 @@ const React = require("react");
 const connect = require("react-redux").connect;
 const actions = require("../actions/actions.jsx");
 const UserInfo = require("./UserInfo.jsx");
-const Form = require("./Form.jsx");
+const FormAdd = require("./FormAdd.jsx");
 
 const AppView = (props) => { //props.products, props.currentUser
 
     return <>
         <UserInfo user={props.currentUser}/>
-        <Form />
+        <FormAdd onProductAdd={props.addProduct}/>
     </>;
 
 }
