@@ -15,9 +15,8 @@ const reducer = (state = {}, action) => {
                 price: action.product.price,
                 quantity: action.product.quantity
             };
-            state.products.push(newProduct);
             return {...state, 
-                    products: state.products, 
+                    products: [...state.products, newProduct], 
                     lastIdProduct: newId
                     }; 
         case "PRODUСT_DELETE":
