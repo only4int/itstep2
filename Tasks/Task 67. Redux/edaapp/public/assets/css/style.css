@@ -10,3 +10,8 @@ body{
 .blog_posts{
     margin-top: 50px;
 }
+.button_trash{
+    cursor: pointer;
+    border: 0;
+    background-color: #fff;
+}
