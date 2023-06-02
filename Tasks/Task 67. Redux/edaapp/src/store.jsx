@@ -5,7 +5,8 @@ state = {
             id,
             name,
             price,
-            quantity
+            quantity,
+            favorite
         }
     ],
     user: {
@@ -32,7 +33,8 @@ store.dispatch({
             id: 1,
             name: "Молоко",
             price: 5,
-            quantity: 1
+            quantity: 1,
+            favorite: false
         }
     ],
     lastIdProduct: 1

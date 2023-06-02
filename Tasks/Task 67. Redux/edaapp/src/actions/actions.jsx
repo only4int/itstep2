@@ -26,4 +26,18 @@ const editProduct = (id, product) => {
     }
 }
 
-module.exports = {addProduct, deleteProduct, editProduct}
+const favoriteProduct = (id) => {
+    return {
+        type: "PRODUCT_FAVORITE",
+        id
+    }
+}
+
+const unfavoriteProduct = (id) => {
+    return {
+        type: "PRODUCT_UNFAVORITE",
+        id
+    }
+}
+
+module.exports = {addProduct, deleteProduct, editProduct, favoriteProduct, unfavoriteProduct}
