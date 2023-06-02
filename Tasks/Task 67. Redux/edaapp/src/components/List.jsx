@@ -2,8 +2,7 @@ const React = require("react");
 
 const List = (props) => {
     
-    function handleButtonClick(event){
-        
+    function handleButtonClick(event){     
         props.onProductDelete(+event.currentTarget.dataset.id);
     }
 
@@ -13,6 +12,10 @@ const List = (props) => {
 
     function handleUnfavoriteClick(event){
         props.onProductFavorite(+event.currentTarget.dataset.id);
+    }
+
+    function getResult(){
+        return props.products.reduce((sum, product) => sum + product.price*product.quantity, 0);
     }
 
     return <>
@@ -60,7 +63,10 @@ const List = (props) => {
                                 </tr>
                     })
                 }
-
+                <tr>
+                    <td colspan="2" valign="right">Итого:</td>
+                    <td colSpan={4} valign="left">{getResult()}</td>
+                </tr>
             </tbody>
         </table>
     </>
