@@ -10,7 +10,7 @@ const AppView = (props) => { //props.products, props.currentUser
     return <>
         <UserInfo user={props.currentUser}/>
         <FormAdd onProductAdd={props.addProduct}/>
-        <List products={props.products} onProductDelete={props.deleteProduct}/>
+        <List products={props.products} onProductDelete={props.deleteProduct} onProductFavorite={props.favoriteProduct} onProductUnfavorite={props.unfavoriteProduct}/>
     </>;
 
 }
