@@ -1,3 +1,5 @@
+
+
 const reducer = (state = {}, action) => {
 
     switch(action.type){
@@ -50,5 +52,4 @@ const reducer = (state = {}, action) => {
     }
     return state;
 }
-
 module.exports = reducer;
