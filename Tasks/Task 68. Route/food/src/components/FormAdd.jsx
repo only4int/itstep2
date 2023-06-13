@@ -68,9 +68,7 @@ const FormAdd = (props) => {
 }
 
 const mapStateToProps = state => {
-    return {
-        user: state.product.user
-    }
+    return {}
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -78,7 +76,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch({
             type: ADD_PRODUCT, product
         })
-    }
+    },
 });
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(FormAdd);

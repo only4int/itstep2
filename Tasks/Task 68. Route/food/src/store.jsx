@@ -31,7 +31,7 @@ const store = redux.createStore(reducer(history), {},
             routerMiddleware(history)
         )
     )
-    );
+);
 
 store.dispatch({
     type: "INIT",

@@ -78,7 +78,7 @@ const List = (props) => {
 
 const mapStateToProps = state => {
     return {
-        products: state.product.products
+        products: state.product.products //product -  название reducer, описанного в /reducer/index.jsx, products - массив продуктов
     }
 };
 
