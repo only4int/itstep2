@@ -20,6 +20,10 @@ const List = (props) => {
         return props.products.reduce((sum, product) => sum + product.price*product.quantity, 0);
     }
 
+    function getReviewsCount(id){ // id - id продукта
+        return props.reviews.filter((review) => review.productId == id).length;
+    }
+
     return <>
         <table className="table">
             <thead>
@@ -30,6 +34,7 @@ const List = (props) => {
                     <th scope="col">Количество</th>
                     <th scope="col">Избранное</th>
                     <th scope="col">Итого</th>
+                    <th scope="col">Отзывы</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -55,6 +60,7 @@ const List = (props) => {
                                         </button>}
                                     </td>
                                     <td  align="right">{item.price*item.quantity}</td>
+                                    <td>{getReviewsCount(item.id)}</td>
                                     <td>
                                         <button className="button_trash" data-id={item.id} onClick={handleButtonClick}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
@@ -78,7 +84,8 @@ const List = (props) => {
 
 const mapStateToProps = state => {
     return {
-        products: state.product.products //product -  название reducer, описанного в /reducer/index.jsx, products - массив продуктов
+        products: state.product.products, //product -  название reducer, описанного в /reducer/index.jsx, products - массив продуктов
+        reviews: state.product.reviews
     }
 };
 

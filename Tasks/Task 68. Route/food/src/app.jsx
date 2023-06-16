@@ -10,11 +10,9 @@ const {Route, Switch} = require("react-router");
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <>
-                <Switch>
-                    <Route path="/" component={AppView}/>
-                </Switch>            
-            </>
+            <Switch>
+                <Route path="/" component={AppView}/>
+            </Switch>            
         </ConnectedRouter>
     </Provider>,
     document.getElementById("app") 

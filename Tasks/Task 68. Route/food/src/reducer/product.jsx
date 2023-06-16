@@ -7,7 +7,9 @@ const reducer = (state = {}, action) => {
             return {...state,
                 products: action.products,
                 user: action.user,
-                lastIdProduct: action.lastIdProduct
+                reviews: action.reviews,
+                lastIdProduct: action.lastIdProduct,
+                lastIdReview: action.lastIdReview
             }
         case "PRODUСT_ADD":
             let newId = ++state.lastIdProduct;
