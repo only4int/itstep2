@@ -49,6 +49,16 @@ const reducer = (state = {}, action) => {
             }
         }
         case "PRODUСT_EDIT":
+            return {...state,
+                products: state.products.map((item) => {
+                    if(item.id == action.id){
+                        item.name = action.product.name;
+                        item.price = action.product.price;
+                        item.quantity = action.product.quantity;
+                    }
+                    return item;
+                })
+            }
             break;
             
     }
