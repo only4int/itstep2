@@ -20,7 +20,7 @@ const FormAdd = (props) => {
             quantity: 0,
             favorite: false 
         });
-        props.history.push("/product/")
+        props.history.push("/product/") //редирект
     }
 
     function handleNameChange(event){
