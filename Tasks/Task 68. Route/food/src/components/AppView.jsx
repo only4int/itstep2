@@ -4,11 +4,13 @@ const FormAdd = require("./FormAdd.jsx");
 const List = require("./List.jsx");
 const {Route, Switch} = require("react-router");
 const Detail = require("./Detail.jsx");
+const Header = require("./Header.jsx");
 
 
 const AppView = () => {
 
     return <div>
+        <Header/>
         <Switch> 
             <Route exact path="/" component={UserInfo}/>
             <Route path="/product/add" component={FormAdd}/>

@@ -1,26 +1,23 @@
 const React = require("react");
-const {Link, Router} = require("react-router-dom");
+const connect = require("react-redux").connect;
+const {push} = require("connected-react-router");
 
 const Header = (props) => {
-    return  <Router>
+
+
+    return  <>
                 <ul className="nav navbar-nav">
-                    <li className="nav-item">
-                        <Link to="/">
-                            Главная
-                        </Link>
+                    <li className="nav-item" onClick={() => {props.push("/")}}>
+                        Главная
                     </li>
-                    <li className="nav-item">
-                        <Link to="/product">
-                            Продукты
-                        </Link>
+                    <li className="nav-item" onClick={() => {props.push("/product/")}}>
+                        Продукты
                     </li>
-                    <li className="nav-item">
-                        <Link to="/product/add">
-                            Добавить
-                        </Link>
+                    <li className="nav-item" onClick={() => {props.push("/product/add")}}>
+                        Добавить
                     </li>
-                </ul>   
-    </Router>;   
+                </ul>
+            </>;   
 }
 
-module.exports = Header;
+module.exports = connect(null, {push})(Header);

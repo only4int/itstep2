@@ -20,7 +20,7 @@ const FormAdd = (props) => {
             quantity: 0,
             favorite: false 
         });
-        
+        props.history.push("/product/")
     }
 
     function handleNameChange(event){
@@ -76,7 +76,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch({
             type: ADD_PRODUCT, product
         })
-    },
+    }
 });
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(FormAdd);
