@@ -1,5 +1,5 @@
 {
-  "name": "reduxapp",
+  "name": "journals",
   "description": "A React.js project using Redux",
   "version": "1.0.0",
   "author": "Vasya Pupkin",
@@ -16,9 +16,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^6.12.1",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.2.1",
-    "superagent": "^3.8.3",
-    "superagent-promise": "^1.1.0"
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@babel/cli": "7.17.0",

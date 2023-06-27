@@ -61,9 +61,7 @@ store.dispatch({
             author: "Вася пупкин",
             text: "Не усваивается"
         },
-    ],
-    lastIdProduct: 1,
-    lastIdReview: 2
+    ]
 });
 
 module.exports = {store, history};
